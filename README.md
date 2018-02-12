@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics)
 # 3D Perception
 Before starting any work on this project, please complete all steps for [Exercise 1, 2 and 3](https://github.com/udacity/RoboND-Perception-Exercises). At the end of Exercise-3 you have a pipeline that can identify points that belong to a specific object.
@@ -104,3 +105,7 @@ $ roslaunch pr2_robot pick_place_project.launch
 For all the step-by-step details on how to complete this project see the [RoboND 3D Perception Project Lesson](https://classroom.udacity.com/nanodegrees/nd209/parts/586e8e81-fc68-4f71-9cab-98ccd4766cfe/modules/e5bfcfbd-3f7d-43fe-8248-0c65d910345a/lessons/e3e5fd8e-2f76-4169-a5bc-5a128d380155/concepts/802deabb-7dbb-46be-bf21-6cb0a39a1961)
 Note: The robot is a bit moody at times and might leave objects on the table or fling them across the room :D
 As long as your pipeline performs succesful recognition, your project will be considered successful even if the robot feels otherwise!
+=======
+# RoboND_Perception_Project
+Project files for perception project of Udacity Robotics Nanodegree.
+>>>>>>> de20e0479631a951bd9ab9fccda64f61e95ead5e
