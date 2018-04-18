@@ -8,9 +8,9 @@ object_list:
       y: 0.0
       z: 0.0
     position:
-      x: 0.5434930324554443
-      y: -0.01975579559803009
-      z: 0.6755187511444092
+      x: 0.5429530739784241
+      y: -0.018953347578644753
+      z: 0.6755579113960266
   place_pose:
     orientation:
       w: 0.0
@@ -31,9 +31,32 @@ object_list:
       y: 0.0
       z: 0.0
     position:
-      x: 0.5417548418045044
-      y: -0.24377337098121643
-      z: 0.7044376730918884
+      x: 0.541803777217865
+      y: -0.2416508048772812
+      z: 0.7040603160858154
+  place_pose:
+    orientation:
+      w: 0.0
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    position:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+  test_scene_num: 1
+- arm_name: left
+  object_name: soap2
+  pick_pose:
+    orientation:
+      w: 0.0
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    position:
+      x: 0.44604408740997314
+      y: 0.22121752798557281
+      z: 0.6776617169380188
   place_pose:
     orientation:
       w: 0.0

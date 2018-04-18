@@ -59,7 +59,7 @@ def pcl_callback(pcl_msg):
 
     # TODO: Voxel Grid Downsampling
 	vox = cloud_ros.make_voxel_grid_filter()
-	LEAF_SIZE = 0.01
+	LEAF_SIZE = 0.007
 	
 	vox.set_leaf_size(LEAF_SIZE, LEAF_SIZE, LEAF_SIZE)
 	cloud_filtered = vox.filter()	
@@ -69,10 +69,10 @@ def pcl_callback(pcl_msg):
 # 
 	outlier_filter = cloud_filtered.make_statistical_outlier_filter()
 #	#Number of neighboring points to analyze for any given point	
-	outlier_filter.set_mean_k(20)
+	outlier_filter.set_mean_k(10)
 
 #	#Threshold Scale Factor	
-	x = 0.001
+	x = 0.5
 #	
 #	# Any point with a mean distance larger than global (mean distance+x*std_dev) will 		be considered outlier
 	outlier_filter.set_std_dev_mul_thresh(x)
@@ -125,7 +125,7 @@ def pcl_callback(pcl_msg):
 	#Cluster Tolerance will determine which cluster will get which color, i.e. if it is too high, nearby objects might get same colour. So experiment and optimize.	
 	ec.set_ClusterTolerance(0.02)
 	ec.set_MinClusterSize(50)
-	ec.set_MaxClusterSize(10000)	
+	ec.set_MaxClusterSize(5000)	
 	# Search the k-d tree for clusters
 	ec.set_SearchMethod(tree)
 	cluster_indices = ec.Extract()
@@ -213,6 +213,7 @@ def pcl_callback(pcl_msg):
 #    # Suggested location for where to invoke your pr2_mover() function within pcl_callback()
 #    # Could add some logic to determine whether or not your object detections are robust
 #    # before calling pr2_mover()
+#Uncomment NEXT 4 LINES FOR RUNNING PR2_MOVER FUNCTION
 	try:
 		pr2_mover(detected_objects)
 	except rospy.ROSInterruptException:
@@ -296,7 +297,7 @@ def pr2_mover(detected_objects_list):
 	#1: Test scene number
 	test_scene_num = Int32()
 	#CHANGE THIS 1,2,3	
-	test_scene_value = 2 
+	test_scene_value = 3
 	test_scene_num.data = int(test_scene_value)
 
 
@@ -340,12 +341,12 @@ def pr2_mover(detected_objects_list):
 		pick_pose.position.y = float_centroid[1]
 		pick_pose.position.z = float_centroid[2]
 
-		#5: Later
+		#5: LATER: Let's make PR2 happy later..
 		place_pose = Pose()
 		
-		place_pose.position.x = 0
-		place_pose.position.y = 0
-		place_pose.position.z = 0
+		#place_pose.position.x = 0
+		#place_pose.position.y = 0
+		#place_pose.position.z = 0
 
 
 	    # Populate various ROS messages
@@ -400,7 +401,7 @@ if __name__ == '__main__':
 	detected_objects_pub = rospy.Publisher("/detected_objects", DetectedObjectsArray, queue_size=1)
 
     # TODO: Load Model From disk: READING IN YOUR TRAINED MODEL
-	model = pickle.load(open('model_final_2.sav', 'rb'))
+	model = pickle.load(open('model_final_3.sav', 'rb'))
 	clf = model['classifier']
 	encoder = LabelEncoder()
 	encoder.classes_ = model['classes']
