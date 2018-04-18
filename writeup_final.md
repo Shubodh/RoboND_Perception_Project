@@ -16,7 +16,7 @@ Alright, we have segmented out our objects from the plane by applying various fi
 This is where clustering techniques like c/k-means, Euclidean (DBSCAN) clustering kick in. For this project, I have used Euclidean clustering, however for further improvement, I will be using k-means later.
 DBSCAN is a density based clustering algorithms and basically works on the basis of proximity of one point from other point. It is necessary to ensure Minimum Cluster Size is not too high to ensure that small objects are not missed, and also it should not be too less as undesirable outlier points might be classified as objects. Similar reasoning can be done to Maximum Cluster Size parameter for avoiding very low parameter value. Very high value should be avoided as two different objects might be classified as one. Therefore, the values were logically chosen and tuned based on observations as 50 and 5000 respectively.
  
-#### 2. Complete Exercise 3 Steps.  Features extracted and SVM trained.  Object recognition implemented. The following is executed in captures_features.py.
+#### 3. Complete Exercise 3 Steps.  Features extracted and SVM trained.  Object recognition implemented. The following is executed in captures_features.py.
 So we have clustered each object, but how do we achieve object recognition, i.e. how to classify it as a particular object?
 We use a Machine Learning Algorithm - Support Vector Machine Algorithm. A particular object one by one is spawned at various location and orientation, and this generated data acts as training input for the algorithm.
 There are 3 fundamental ways in which the SVM classifier can be improved.
@@ -28,7 +28,7 @@ As it is evident from the below Normalized Confusion Matrix for Scene 3, it is a
 
 
  
-![Normalized_Confusion](https://github.com/Shubodh/RoboND_Perception_Project/Normalized_Confusion.png) 
+![Normalized_Confusion](https://github.com/Shubodh/RoboND_Perception_Project/blob/master/Normalized_Confusion.png) 
  
 ### Pick and Place Setup 
 #### 1. For all three tabletop setups (`test*.world`), perform object recognition, then read in respective pick list (`pick_list_*.yaml`). Next construct the messages that would comprise a valid `PickPlace` request output them to `.yaml` format. 
@@ -42,20 +42,20 @@ All the objects were successfully recognized in all the test scenes as shown bel
 World 1:
 Please find the output_1.yaml file and the corresponding screenshot:
 
-![World1_Recognition](https://github.com/Shubodh/RoboND_Perception_Project/World1_Recognition.png) 
+![World1_Recognition](https://github.com/Shubodh/RoboND_Perception_Project/blob/master/World1_Recognition.PNG) 
 
 World 2:
 Please find the output_2.yaml file and the corresponding screenshot and terminal output information:
 [INFO] [1524034738.269987, 1129.040000]: Detected 5 objects: ['biscuits', 'book', 'soap', 'soap2', 'glue']
 
-![World2_Recognition](https://github.com/Shubodh/RoboND_Perception_Project/World2_Recognition.png) 
+![World2_Recognition](https://github.com/Shubodh/RoboND_Perception_Project/blob/master/World2_Recognition.PNG) 
 
 World 3:
 Please find the output_3.yaml file and the corresponding screenshot and terminal output information:
 
 [INFO] [1524035461.593624, 1348.157000]: Detected 8 objects: ['snacks', 'biscuits', 'book', 'soap', 'eraser', 'sticky_notes', 'soap2', 'glue']
 
-![World3_Recognition](https://github.com/Shubodh/RoboND_Perception_Project/World3_Recognition.png) 
+![World3_Recognition](https://github.com/Shubodh/RoboND_Perception_Project/blob/master/World3_Recognition.PNG) 
  
 Making PR2 happy: Placing the objects + Extra Challenges – Coming soon!   
  
